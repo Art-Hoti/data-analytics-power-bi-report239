@@ -35,6 +35,36 @@ This project involves creating a comprehensive Power BI report for a medium-size
   - Removed unused columns (e.g., index columns) to streamline the dataset.
   - Renamed the remaining columns to align with Power BI naming conventions for consistency and clarity.
 
+## Milestone 2: Data Modeling and Measures
+
+### 1. Date Table
+- **Data Source:** Generated in Power BI using DAX.
+- **Steps Taken:**
+  - Created a continuous date table covering the time period from the earliest `[Order Date]` to the latest `[Shipping Date]`.
+  - Added columns for Day of Week, Month Number, Month Name, Quarter, Year, Start of Year, Start of Quarter, Start of Month, and Start of Week using DAX formulas.
+
+### 2. Star Schema Data Model
+- **Relationships Created:**
+  - `Products[product_code]` to `orders_powerbi[product_code]`
+  - `data-analytics (2)[store code]` to `orders_powerbi[Store Code]`
+  - `Customers[User UUID]` to `orders_powerbi[User ID]`
+  - `DateTable[date]` to `orders_powerbi[Order Date]`
+  - Ensured that the relationship between `orders_powerbi[Order Date]` and `DateTable[date]` is the active relationship.
+
+### 3. Key Measures
+- **Measures Created:**
+  - `Total Orders`: Counts the number of orders in the `orders_powerbi` table.
+  - `Total Revenue`: Multiplies `orders_powerbi[Product Quantity]` by `Products[Sale Price]` and sums the result.
+  - `Total Profit`: Calculates the difference between `Products[Sale Price]` and `Products[Cost Price]`, multiplies by `orders_powerbi[Product Quantity]`, and sums the result.
+  - `Total Customers`: Counts the number of unique customers in the `orders_powerbi` table.
+  - `Total Quantity`: Counts the number of items sold in the `orders_powerbi` table.
+  - `Profit YTD`: Calculates the total profit for the current year.
+  - `Revenue YTD`: Calculates the total revenue for the current year.
+
+### 4. Hierarchies
+- **Date Hierarchy:** Created a hierarchy with levels for Start of Year, Start of Quarter, Start of Month, Start of Week, and Date.
+- **Geography Hierarchy:** Created a hierarchy with levels for World Region, Country, and Country Region, including calculated columns for `Country` and `Geography` in the `data-analytics (2)` table.
+
 ## How to Access the Report
 - **Power BI File:** The latest version of the Power BI `.pbix` file can be found in this repository under the `/Reports` directory.
 - **Instructions:** Open the `.pbix` file in Power BI Desktop to explore the report and review the data transformations applied.
@@ -42,5 +72,5 @@ This project involves creating a comprehensive Power BI report for a medium-size
 ---
 
 ### Commit Summary:
-- Updated README with detailed documentation of the data import and transformation process for Milestone 1.
+- Updated README with detailed documentation of the data import and transformation process for Milestone 1 and Milestone 2.
 - Added the latest version of the Power BI report (`.pbix` file) to the repository.
