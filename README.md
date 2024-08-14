@@ -1,7 +1,7 @@
 # Power BI Quarterly Report
 
 ## Project Overview
-This project involves creating a comprehensive Power BI report for a medium-sized international retailer. The goal is to transform data from various sources into actionable insights to facilitate better decision-making across different regions.
+This project involved creating a comprehensive Power BI report for a medium-sized international retailer. The goal was to transform data from various sources into actionable insights to facilitate better decision-making across different regions.
 
 ## Milestone 1: Data Loading and Transformation
 
@@ -35,7 +35,7 @@ This project involves creating a comprehensive Power BI report for a medium-size
   - Removed unused columns (e.g., index columns) to streamline the dataset.
   - Renamed the remaining columns to align with Power BI naming conventions for consistency and clarity.
 
-## Milestone 2: Data Modeling and Measures
+## Milestone 2: Data Modelling and Measures
 
 ### 1. Date Table
 - **Data Source:** Generated in Power BI using DAX.
@@ -65,6 +65,50 @@ This project involves creating a comprehensive Power BI report for a medium-size
 - **Date Hierarchy:** Created a hierarchy with levels for Start of Year, Start of Quarter, Start of Month, Start of Week, and Date.
 - **Geography Hierarchy:** Created a hierarchy with levels for World Region, Country, and Country Region, including calculated columns for `Country` and `Geography` in the `data-analytics (2)` table.
 
+## Milestone 3: Report Pages and Visualisations
+
+### 1. Executive Summary Page
+- **Visuals Created:**
+  - Bar chart showing Total Revenue by Product Category.
+  - KPI cards for key metrics such as Total Revenue, Total Profit, and Total Orders.
+  - Top 10 Products table displaying Product Description, Total Revenue, Total Customers, Total Orders, and Profit per Order.
+
+### 2. Customer Detail Page
+- **Visuals Created:**
+  - Table showing the Top 20 Customers with key metrics.
+  - Donut charts displaying Total Customers by Product and by Country.
+  - Line graph showing customer growth over time.
+
+### 3. Product Detail Page
+- **Visuals Created:**
+  - Scatter graph displaying Orders vs. Profitability for top products.
+  - Area chart showing Revenue trends by Product Category over time.
+  - Top 10 Products table, similar to the Executive Summary page.
+
+### 4. Stores Map Page
+- **Visuals Created:**
+  - Map visual showing store locations with Profit YTD represented by bubble size.
+  - Slicer for filtering by Country and Product Category.
+
+### 5. Stores Drillthrough Page
+- **Visuals Created:**
+  - Table showing the top 5 products for the selected store with columns for Description, Profit YTD, Total Orders, and Total Revenue.
+  - Column chart showing Total Orders by Product Category for the selected store.
+  - Gauges for Profit YTD against a 20% year-on-year growth target.
+  - Card visual showing the currently selected store.
+
+## Milestone 4: Advanced Features
+
+### 1. Bookmarks and Navigation
+- **Implemented a pop-out toolbar using bookmarks** to house slicers for Product Category and Country, allowing users to filter data without cluttering the report page.
+- **Custom icons** were added to the navigation bar to improve usability and aesthetics.
+
+### 2. Custom Tooltips
+- **Created custom tooltips** to display store performance metrics, such as Profit YTD against target, when hovering over a store on the map.
+
+### 3. Edit Interactions
+- **Configured interactions** between visuals to ensure relevant data is displayed without unnecessary filtering, enhancing user experience across the report pages.
+
 ## How to Access the Report
 - **Power BI File:** The latest version of the Power BI `.pbix` file can be found in this repository under the `/Reports` directory.
 - **Instructions:** Open the `.pbix` file in Power BI Desktop to explore the report and review the data transformations applied.
@@ -72,5 +116,5 @@ This project involves creating a comprehensive Power BI report for a medium-size
 ---
 
 ### Commit Summary:
-- Updated README with detailed documentation of the data import and transformation process for Milestone 1 and Milestone 2.
+- Updated README with detailed documentation of the data import, transformation, and reporting process across all milestones.
 - Added the latest version of the Power BI report (`.pbix` file) to the repository.
